@@ -1,5 +1,6 @@
 builds:
   -
+    id: app1
     main: ./cmd/app1
     binary: app1
     targets:
@@ -8,6 +9,7 @@ builds:
       - windows_amd64
 
   -
+    id: app2
     main: ./cmd/app2
     binary: app2
     targets:
