@@ -1,4 +1,4 @@
-buils:
+builds:
   -
     main: ./cmd/app1
     binary: app1
