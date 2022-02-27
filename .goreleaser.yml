@@ -10,6 +10,9 @@ builds:
 
 archives:
   -
+    id: app1
+    builds:
+      - app1
     format_overrides:
       -
         goos: windows
