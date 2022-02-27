@@ -14,3 +14,10 @@ builds:
     binary: app2
     targets:
       - windows_amd64
+
+archives:
+  -
+    id: app1
+    builds:
+      - app1
+      - app2
