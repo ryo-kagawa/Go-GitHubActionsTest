@@ -23,7 +23,7 @@ jobs:
     -
       name: Generate Licenses
       run: |
-        go get github.com/google/go-licenses
+        go install github.com/google/go-licenses@latest
         go-licenses save ./... --force --save_path="./licenses"
     -
       name: Run GoReleaser
