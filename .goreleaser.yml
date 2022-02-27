@@ -42,4 +42,4 @@ release:
   draft: true
 
 changelog:
-  use: github
+  use: github-native
