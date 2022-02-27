@@ -4,6 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"os"
+
+	"github.com/ryo-kagawa/go-utils/conditional"
 )
 
 func main() {
@@ -11,6 +13,17 @@ func main() {
 	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 	}
+	fmt.Println(
+		conditional.StringFunc(
+			2 <= len(os.Args),
+			func() string {
+				return os.Args[1]
+			},
+			func() string {
+				return ""
+			},
+		),
+	)
 	fmt.Println(result)
 }
 
