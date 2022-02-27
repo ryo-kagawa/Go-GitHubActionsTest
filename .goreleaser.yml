@@ -40,3 +40,6 @@ archives:
 
 release:
   draft: true
+
+changelog:
+  use: github
