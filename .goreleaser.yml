@@ -4,7 +4,7 @@ builds:
     main: ./cmd/app1
     binary: app1
     ldflags:
-      - -s -w -X main.build=v{{.Version}}
+      - -s -w -X main.version=v{{ .Version }}
     targets:
       - darwin_arm64
       - linux_amd64
@@ -14,7 +14,7 @@ builds:
     main: ./cmd/app2
     binary: app2
     ldflags:
-      - -s -w -X main.build=v{{.Version}}
+      - -s -w -X main.version=v{{ .Version }}
     targets:
       - windows_amd64
 
