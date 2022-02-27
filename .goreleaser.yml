@@ -19,6 +19,7 @@ archives:
     id: app1
     builds:
       - app1
+    name_template: "app1_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       -
         goos: windows
@@ -27,6 +28,7 @@ archives:
     id: app2
     builds:
       - app2
+    name_template: "app2_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       -
         goos: windows
