@@ -3,6 +3,8 @@ builds:
     id: app1
     main: ./cmd/app1
     binary: app1
+    ldflags:
+      - -s -w -X main.build=v{{.Version}}
     targets:
       - darwin_arm64
       - linux_amd64
@@ -11,6 +13,8 @@ builds:
     id: app2
     main: ./cmd/app2
     binary: app2
+    ldflags:
+      - -s -w -X main.build=v{{.Version}}
     targets:
       - windows_amd64
 
@@ -19,7 +23,7 @@ archives:
     id: app1
     builds:
       - app1
-    name_template: "app1_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "app1_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       -
         goos: windows
@@ -28,7 +32,7 @@ archives:
     id: app2
     builds:
       - app2
-    name_template: "app2_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    name_template: "app2_v{{ .Version }}_{{ .Os }}_{{ .Arch }}"
     format_overrides:
       -
         goos: windows
