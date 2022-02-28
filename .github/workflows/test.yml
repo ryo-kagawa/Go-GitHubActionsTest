@@ -3,13 +3,14 @@ name: Test
 on:
   workflow_dispatch:
     inputs:
-      description: choice test
-      required: true
-      type: choice
-      options:
-        - patch
-        - minor
-        - major
+      gitBump:
+        description: Git Bump
+        required: true
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
 
 jobs:
   build:
@@ -34,6 +35,7 @@ jobs:
       name: Add Tag
       run: |
         echo タグ付けどうすればいいんだろうか・・・？
+        echo ${{ github.event.inputs.gitBump }}
     -
       name: Generate Licenses
       run: |
