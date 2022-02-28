@@ -21,7 +21,7 @@ jobs:
       with:
         go-version: 1.17
     -
-      name: test
+      name: Run Test
       run: |
         go test --race ./...
     -
