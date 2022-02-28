@@ -3,14 +3,9 @@ name: Test
 on:
   workflow_dispatch:
     inputs:
-      gitBump:
-        description: Git Bump
+      tag:
+        description: Release Tag format is v[0-9]+.[0-9]+.[0-9]+
         required: true
-        type: choice
-        options:
-          - patch
-          - minor
-          - major
 
 jobs:
   build:
@@ -34,8 +29,9 @@ jobs:
     -
       name: Add Tag
       run: |
-        echo タグ付けどうすればいいんだろうか・・・？
-        echo ${{ github.event.inputs.gitBump }}
+        [[ ${{ github.event.inputs.tag }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]]
+        git tag ${{ github.event.inputs.tag }}
+        git push origin ${{ github.event.inputs.tag }}
     -
       name: Generate Licenses
       run: |
