@@ -21,6 +21,10 @@ jobs:
       with:
         go-version: 1.17
     -
+      name: test
+      run: |
+        go test --race ./...
+    -
       name: Generate Licenses
       run: |
         go install github.com/google/go-licenses@latest
