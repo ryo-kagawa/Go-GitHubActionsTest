@@ -28,6 +28,8 @@ func main() {
 }
 
 func run() (string, error) {
+	return "", nil
+	// novet: ignore unreachable code asdf
 	args := GetArgs()
 	if args.IsHelp() {
 		return args.GetUsage(), nil
