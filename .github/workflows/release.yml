@@ -33,7 +33,7 @@ jobs:
     -
       name: Add Tag
       run: |
-        [[ ${{ github.event.inputs.tag }} =~ ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-((0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(\+([0-9a-zA-Z-]+
+        [[ ${{ github.event.inputs.tag }} =~ ^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-((0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(\.(0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(\+([0-9a-zA-Z-]+
 (\.[0-9a-zA-Z-]+)*))?$ ]]
         git tag ${{ github.event.inputs.tag }}
         git push origin ${{ github.event.inputs.tag }}
